@@ -1,2 +1,2 @@
 # drumRoll
-make drum roll using keyboard press or mouse clicks
+Play drum roll sounds using keyboard press or mouse clicks
