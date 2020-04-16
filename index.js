@@ -4,12 +4,14 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
     var audio = new Audio(makeSound(this.innerHTML));
     audio.play();
+    buttonAnimation(this.innerHTML);
   });
 }
 
 document.addEventListener("keydown", function(event) {
   var audio = new Audio(makeSound(event.key.toLowerCase()));
   audio.play();
+  buttonAnimation(event.key.toLowerCase());
 });
 
 
@@ -39,4 +41,13 @@ function makeSound(key) {
     default:
       return key;
   }
+}
+
+
+function buttonAnimation(currentKey){
+var button = document.querySelector("."+currentKey);
+button.classList.add("pressed");
+setTimeout(function(){
+  button.classList.remove("pressed");
+},100);
 }
